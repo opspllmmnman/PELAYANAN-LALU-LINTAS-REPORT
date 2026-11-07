@@ -31,7 +31,7 @@ p{margin:0;font-size:14.5px;line-height:1.55;color:#D3DDF0}
 <div class="bawah"><div class="dots" id="dt"><i class="on"></i><i></i><i></i></div><button class="lanjut" id="nx">Lanjut</button></div></div>
 <noscript><p style="position:fixed;z-index:99;top:0;left:0;right:0;background:#fff;color:#000;margin:0;padding:12px">Aplikasi ini membutuhkan JavaScript. <a href="https://script.google.com/macros/s/AKfycbx1id1yXcGIA5_gzowk2c_utUZAf4O4rAG-ZjWCIVQnqRuKX-xkh8tuPPwO5c5vVlB1QQ/exec">Buka langsung di sini</a>.</p></noscript>
 <script>
-var KEY="pll_onboard_v1",tr=document.getElementById("tr"),dt=document.querySelectorAll("#dt i"),nx=document.getElementById("nx"),ob=document.getElementById("onboard"),bg=document.getElementById("ob-bg"),n=3,k=0;
+var KEY="pll_onboard_v2",tr=document.getElementById("tr"),dt=document.querySelectorAll("#dt i"),nx=document.getElementById("nx"),ob=document.getElementById("onboard"),bg=document.getElementById("ob-bg"),n=3,k=0;
 function sudah(){try{return localStorage.getItem(KEY)==="1"}catch(e){return false}}
 function ingat(){try{localStorage.setItem(KEY,"1")}catch(e){}}
 function tanda(){dt.forEach(function(d,i){d.className=i===k?"on":""});nx.textContent=k===n-1?"Mulai Masuk":"Lanjut"}
@@ -44,5 +44,5 @@ function langkah(t){if(t0===null)t0=t;var p=Math.min(1,(t-t0)/DURASI);tr.scrollL
 requestAnimationFrame(langkah)}
 nx.onclick=function(){if(k<n-1)geser(k+1);else masuk()};
 document.getElementById("lw").onclick=masuk;
-if(sudah()){ob.style.display="none";bg.style.display="none"}
+if(sudah()&&location.search.indexOf("slide")<0){ob.style.display="none";bg.style.display="none"}
 </script></body></html>
